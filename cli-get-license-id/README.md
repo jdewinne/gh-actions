@@ -1,5 +1,6 @@
 # CLI: Get a Customer License ID
 
+```mermaid
 ---
 title: CLI get customer license id
 ---
@@ -9,3 +10,4 @@ replicated_app ---> cli_get_customer_license_id
 replicated_api_token ---> cli_get_customer_license_id
 customer ---> cli_get_customer_license_id
 cli_get_customer_license_id ---> license_id
+```
