@@ -1,0 +1,32 @@
+name: 'Replicated CLI promote Release'
+description: 'CLI: Archive a channel'
+inputs:
+  replicated-app:
+    description: 'Replicated App Slug.'
+    required: true
+    default: ''
+  replicated-api-token:
+    description: 'Replicated API Token.'
+    required: true
+    default: ''
+  release-sequence:
+    description: 'The release sequence number to promote.'
+    required: true
+  channel-id:
+    description: 'The id of the channel to promote to.'
+    required: true
+  version:
+    description: 'The version field of the Release to promote.'
+    required: true
+runs:
+  using: 'docker'
+  image: '../Dockerfile'
+  args:
+    - release
+    - promote
+    - ${{ inputs.release-sequence }}
+    - ${{ inputs.channel-id }}
+    - --version=${{ inputs.version }}
+  env:
+    REPLICATED_APP: ${{ inputs.replicated-app }}
+    REPLICATED_API_TOKEN: ${{ inputs.replicated-api-token }}

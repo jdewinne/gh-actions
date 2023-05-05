@@ -10,4 +10,5 @@ replicated_app ---> replicated_cli_inspect_channel
 replicated_api_token ---> replicated_cli_inspect_channel
 channel_name ---> replicated_cli_inspect_channel
 replicated_cli_inspect_channel ---> channel_id
+replicated_cli_inspect_channel ---> release_sequence
 ```
